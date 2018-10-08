@@ -1,0 +1,53 @@
+<div class="ui container">
+  &nbsp;
+  <div class="ui inverted segment">
+    <div class="ui center aligned grid">
+      <div class="three column row">
+        <div class="column">
+          <button class="ui icon inverted button" (click)="changeWeek(-7)">
+            <i class="angle double left icon"></i>
+          </button>
+        </div>
+        <div class="column">
+          <h2 class="ui centered inverted header"> Week of {{dateString}} </h2>
+        </div>
+        <div class="column">
+          <button class="ui inverted icon button" (click)="changeWeek(7)">
+            <i class="angle double right icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <table class="ui selectable inverted table">
+        <tbody>
+          <tr>
+            <td>
+              <h3 class="ui blue centered inverted header">Quote of The Week</h3>
+            </td>
+            <td>
+              <button *ngIf="quote == null" class="ui inverted yellow button" (click)="addEvent(3)">Add</button>
+              {{quote}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 class="ui green centered inverted header">Healthy Fun Fact</h3>
+            </td>
+            <td>
+              <button *ngIf="healthyFact == null" class="ui inverted yellow button" (click)="addEvent(2)">Add</button>
+              {{healthyFact}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3 class="ui teal centered inverted header">Song Of The Week</h3>
+            </td>
+            <td>
+              <button *ngIf="song == null" class="ui inverted yellow button" (click)="addEvent(1)" >Add</button>
+              {{song}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

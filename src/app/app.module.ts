@@ -6,11 +6,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {SuiModule} from 'ng2-semantic-ui';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ManageEmployeesComponent } from './manage-employees/manage-employees.component';
-import { ViewHistoryComponent } from './view-history/view-history.component';
-import { UpcomingComponent } from './upcoming/upcoming.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ManageEmployeesComponent } from './components/manage-employees/manage-employees.component';
+import { ViewHistoryComponent } from './components/view-history/view-history.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
 
 
 const appRoutes: Routes = [
