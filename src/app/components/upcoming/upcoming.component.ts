@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OfficeEvent } from '../../models/officeEvent';
 
 @Component({
   selector: 'app-upcoming',
@@ -12,6 +13,8 @@ export class UpcomingComponent implements OnInit {
   healthyFact: any;
   quote: any;
   song: any;
+  showAddPart: boolean;
+addEvent: OfficeEvent;
 
   constructor() {
   }
@@ -20,6 +23,7 @@ export class UpcomingComponent implements OnInit {
     console.log("Init");
     this.setDate();
     this.loadEmployees();
+    this.showAddPart = false;
   }
 
   calculateDateString() {
@@ -49,10 +53,11 @@ export class UpcomingComponent implements OnInit {
   }
 
   changeWeek(n) {
-    console.log("changeWeek()");
+    console.log("changeWeek() " + n);
     this.date.setDate(this.date.getDate() + n);
     this.calculateDateString();
     this.loadEmployees();
+    this.showAddPart = false;
   }
 
   loadEmployees() {
@@ -83,6 +88,11 @@ export class UpcomingComponent implements OnInit {
 
   getSong() {
     this.song = 'Christian';
+  }
+
+  createEvent(n){
+    console.log("createEvent() " + n);
+    this.showAddPart = true;
   }
 
 }

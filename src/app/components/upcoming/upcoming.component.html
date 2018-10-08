@@ -17,37 +17,61 @@
           </button>
         </div>
       </div>
+      <div class="row">
 
-      <table class="ui selectable inverted table">
-        <tbody>
-          <tr>
-            <td>
-              <h3 class="ui blue centered inverted header">Quote of The Week</h3>
-            </td>
-            <td>
-              <button *ngIf="quote == null" class="ui inverted yellow button" (click)="addEvent(3)">Add</button>
-              {{quote}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h3 class="ui green centered inverted header">Healthy Fun Fact</h3>
-            </td>
-            <td>
-              <button *ngIf="healthyFact == null" class="ui inverted yellow button" (click)="addEvent(2)">Add</button>
-              {{healthyFact}}
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h3 class="ui teal centered inverted header">Song Of The Week</h3>
-            </td>
-            <td>
-              <button *ngIf="song == null" class="ui inverted yellow button" (click)="addEvent(1)" >Add</button>
-              {{song}}</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="ui selectable inverted table">
+          <tbody>
+            <tr>
+              <td>
+                <h3 class="ui blue centered inverted header">Quote of The Week</h3>
+              </td>
+              <td>
+                <button *ngIf="quote == null" class="ui inverted yellow button" (click)="createEvent(3)">Add</button>
+                {{quote}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3 class="ui green centered inverted header">Healthy Fun Fact</h3>
+              </td>
+              <td>
+                <button *ngIf="healthyFact == null" class="ui inverted yellow button" (click)="createEvent(2)">Add</button>
+                {{healthyFact}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3 class="ui teal centered inverted header">Song Of The Week</h3>
+              </td>
+              <td>
+                <button *ngIf="song == null" class="ui inverted yellow button" (click)="createEvent(1)">Add</button>
+                {{song}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="showAddPart" class="row">
+        <form #contForm="ngForm" class="ui inverted stackable form">
+          <h4 class="ui inverted dividing header">Add Event Information</h4>
+          <div class="field">
+            <div class="three fields">
+                <div class="field">
+                    <label>Type </label>
+                    <input type="text" readonly="" read name="type" placeholder="Ellisville">
+                  </div>
+              <div class="required field">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Email">
+              </div>
+              <div class="required field">
+                <label>Phone Number</label>
+                <input type="number" name="phone" placeholder="Phone">
+              </div>
+            </div>
+          </div>
+          <button>Add</button>
+          <button>Cancel</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
