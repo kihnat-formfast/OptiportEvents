@@ -15,6 +15,8 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 
 const appRoutes: Routes = [
   { path: '', component: UpcomingComponent },
+  { path: 'manage', component: ManageEmployeesComponent },
+  { path: 'history', component: ViewHistoryComponent },
 ];
 
 @NgModule({
