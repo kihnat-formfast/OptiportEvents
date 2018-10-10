@@ -4,5 +4,6 @@ export class OfficeEvent {
     employeeName: string;
     employeeId: number;
     date: Date;
+    dateString: string;
 }
 

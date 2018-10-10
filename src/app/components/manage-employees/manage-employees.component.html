@@ -1,5 +1,58 @@
 <div class="ui container">
-<p>
-  manage-employees works!
-</p>
+  &nbsp;
+  <div class="ui inverted segment">
+    <div class="ui center aligned grid">
+      <div class="row">
+
+        <table class="ui selectable inverted table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Active</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employees">
+              <td>
+                <h3 class="ui blue centered inverted header" [ngModelOptions]="{standalone: true}" [(ngModel)]="employee.firstName"></h3>
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                  <input type="checkbox"  value="{{employee.active}}" />
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <div class="ui fluid input">
+                  <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="newEmployee.firstName"
+                    placeholder="First Name" />
+                </div>
+              </td>
+              <td>
+                <div class="ui fluid input">
+                  <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="newEmployee.lastName"
+                    placeholder="Last Name" />
+                </div>
+              </td>
+              <td>
+                <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="newPerson.active" />
+              </td>
+              <td class="collapsing">
+                <button type="button" class="ui fluid green button" (click)="addNewEmployee()">
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

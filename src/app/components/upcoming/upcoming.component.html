@@ -55,22 +55,24 @@
           <h4 class="ui inverted dividing header">Add Event Information</h4>
           <div class="field">
             <div class="three fields">
-                <div class="field">
-                    <label>Type </label>
-                    <input type="text" readonly="" read name="type" placeholder="Ellisville">
-                  </div>
-              <div class="required field">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="Email">
+              <div class="field">
+                <label>Type </label>
+                <input type="text" readonly="" read name="type" placeholder={{addEvent.typeName}}>
               </div>
               <div class="required field">
-                <label>Phone Number</label>
-                <input type="number" name="phone" placeholder="Phone">
+                <label>Assignee</label>
+                <select id="employeeList" read name="employeeList" class="ui fluid dropdown" [(ngModel)]="addEvent.employeeName">
+                    <option *ngFor="let employee of employees" value={{employee}}>{{employee}}</option>
+                  </select>
               </div>
+              <div class="field">
+                  <label>Date </label>
+                  <input type="text" readonly="" read name="date" placeholder={{addEvent.dateString}}>
+                </div>
             </div>
           </div>
-          <button>Add</button>
-          <button>Cancel</button>
+          <button class="ui inverted green button" (click)="submitEvent()">Add</button>
+          <button class="ui inverted red button" (click)="cancelEvent()">Cancel</button>
         </form>
       </div>
     </div>

@@ -14,7 +14,8 @@ export class UpcomingComponent implements OnInit {
   quote: any;
   song: any;
   showAddPart: boolean;
-addEvent: OfficeEvent;
+  addEvent: OfficeEvent;
+  employees: any[];
 
   constructor() {
   }
@@ -24,6 +25,7 @@ addEvent: OfficeEvent;
     this.setDate();
     this.loadEmployees();
     this.showAddPart = false;
+    this.employees = ["Kody", "Christian"];
   }
 
   calculateDateString() {
@@ -90,9 +92,29 @@ addEvent: OfficeEvent;
     this.song = 'Christian';
   }
 
-  createEvent(n){
+  createEvent(n) {
     console.log("createEvent() " + n);
+    const eventArray = ["Song Of The Week", "Healthy Fun Fact", "Quote Of The Week"]
     this.showAddPart = true;
+
+    this.addEvent = new OfficeEvent;
+    this.addEvent.typeId = n;
+    this.addEvent.typeName = eventArray[n - 1];
+    this.addEvent.date = this.date;
+    this.addEvent.dateString = this.dateString;
   }
 
+  submitEvent() {
+    console.log("submitEvent()");
+    console.log(this.addEvent);
+    //SEND TO API
+    this.addEvent = new OfficeEvent;
+    this.showAddPart = false;
+  }
+
+  cancelEvent() {
+    console.log("cancelEvent()");
+    this.addEvent = new OfficeEvent;
+    this.showAddPart = false;
+  }
 }
