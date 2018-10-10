@@ -14,17 +14,37 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let employee of employees">
+            <tr *ngFor="let person of employees">
               <td>
-                <h3 class="ui blue centered inverted header" [ngModelOptions]="{standalone: true}" [(ngModel)]="employee.firstName"></h3>
+                {{person.firstName}}
               </td>
               <td>
-                
+                {{person.lastName}}
               </td>
               <td>
-                  <input type="checkbox"  value="{{employee.active}}" />
+                <div *ngIf="person.id != editIndex">
+                  <h4 class="ui light green header" *ngIf="person.active">Active</h4>
+                  <h4 class="ui light yellow header" *ngIf="!person.active">Inactive</h4>
+                </div>
+                <div *ngIf="person.id == editIndex">
+                  <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="person.active" />
+                </div>
               </td>
-              <td></td>
+              <td>
+                <div *ngIf="person.id != editIndex">
+                  <button type="button" class="ui fluid blue button" (click)="editEmployee(person)">
+                    Edit
+                  </button>
+                </div>
+                <div *ngIf="person.id == editIndex">
+                  <button type="button" class="ui fluid green button" (click)="updateEmployee(person)">
+                    Update
+                  </button>
+                  <button type="button" class="ui fluid red button" (click)="cancelEmployee()">
+                    Cancel
+                  </button>
+                </div>
+              </td>
             </tr>
           </tbody>
           <tfoot>
@@ -42,7 +62,7 @@
                 </div>
               </td>
               <td>
-                <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="newPerson.active" />
+                <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="newEmployee.active" />
               </td>
               <td class="collapsing">
                 <button type="button" class="ui fluid green button" (click)="addNewEmployee()">

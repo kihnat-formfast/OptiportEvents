@@ -1,5 +1,5 @@
 export class Employee {
-    Id: number;
+    id: number;
     firstName: string;
     lastName: string;
     active: Boolean;

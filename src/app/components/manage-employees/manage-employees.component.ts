@@ -6,25 +6,29 @@ import { Employee } from '../../models/employee'
   templateUrl: './manage-employees.component.html',
   styleUrls: ['./manage-employees.component.css']
 })
-export class ManageEmployeesComponent implements OnInit {
 
+
+export class ManageEmployeesComponent implements OnInit {
   employees: Employee[] = [];
   newEmployee: Employee;
+  editIndex: number;
 
   constructor() { }
 
-  ngOnInit() {
-    this.loadEmployees();
-  }
 
-  loadEmployees() {
-    // var newEmp: Employee = new Employee;
-    // newEmp.active = true;
-    // newEmp.firstName = "Kody";
-    // newEmp.lastName = "LastName";
-    // newEmp.Id = 0;
-    // this.employees.push(newEmp);
-    // this.employees = [newEmp];
+  ngOnInit() {
+    var pat = new Employee();
+    this.employees = [];
+
+    pat.firstName = 'Test';
+    pat.lastName = 'Budgie';
+    pat.active = true;
+    pat.id = 5;
+
+    this.employees.push(pat);
+
+    this.newEmployee = new Employee;
+    this.editIndex = -1;
   }
 
   addNewEmployee() {
@@ -33,4 +37,17 @@ export class ManageEmployeesComponent implements OnInit {
     var newEmp: Employee = new Employee;
     this.newEmployee = newEmp;
   }
+
+  editEmployee(person: Employee) {
+    this.editIndex = person.id;
+  }
+
+  cancelEmployee() {
+    this.editIndex = -1;
+  }
+
+  updateEmployee(person: Employee) {
+    this.editIndex = -1;
+  }
+
 }
