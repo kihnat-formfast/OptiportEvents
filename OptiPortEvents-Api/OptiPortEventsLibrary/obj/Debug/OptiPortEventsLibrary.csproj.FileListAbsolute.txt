@@ -1,0 +1,10 @@
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\OptiPortEventsLibrary.dll.config
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\OptiPortEventsLibrary.dll
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\OptiPortEventsLibrary.pdb
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\EntityFramework.dll
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\EntityFramework.xml
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\obj\Debug\OptiPortEventsLibrary.csprojResolveAssemblyReference.cache
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\obj\Debug\OptiPortEventsLibrary.dll
+C:\Users\christian.jensen\Desktop\mywork folder\OptiPortEventsApi\OptiPortEventsApi\OptiPortEventsLibrary\obj\Debug\OptiPortEventsLibrary.pdb
